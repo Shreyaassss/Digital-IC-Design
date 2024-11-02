@@ -1,8 +1,0 @@
-Circuit: *** SPICE deck for cell FiveStageRingOsc{sch} from library Demo
-
-Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
-Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
-Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
-Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
-Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
-Direct Newton iteration for .op point succeeded.

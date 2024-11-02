@@ -1,4 +1,0 @@
-Circuit: *** SPICE deck for cell Test__NAND2_2x{sch} from library Demo
-
-Fatal Error: Unknown subcircuit called in:
-   xnand2_2x@0 a_in b_in gnd vdd y demo__nand2_2x

@@ -1,48 +1,0 @@
-Title: *** SPICE deck for cell FiveStageRingOsc{sch} from library Demo
-Date: Thu Sep 05 13:06:49 2024
-Plotname: Operating Point
-Flags: real
-No. Variables: 37
-No. Points:            1
-Offset:   0.0000000000000000e+000
-Command: Linear Technology Corporation LTspice IV
-Variables:
-	0	V(net@9)	voltage
-	1	V(net@0)	voltage
-	2	V(vdd)	voltage
-	3	V(net@19)	voltage
-	4	V(net@27)	voltage
-	5	V(net@12)	voltage
-	6	V(in1)	voltage
-	7	V(net@37)	voltage
-	8	I(V1)	device_current
-	9	Ix(inverter@0:GND)	subckt_current
-	10	Ix(inverter@0:INP)	subckt_current
-	11	Ix(inverter@0:OUT)	subckt_current
-	12	Ix(inverter@0:VDD)	subckt_current
-	13	Ix(inverter@1:GND)	subckt_current
-	14	Ix(inverter@1:INP)	subckt_current
-	15	Ix(inverter@1:OUT)	subckt_current
-	16	Ix(inverter@1:VDD)	subckt_current
-	17	Ix(inverter@2:GND)	subckt_current
-	18	Ix(inverter@2:INP)	subckt_current
-	19	Ix(inverter@2:OUT)	subckt_current
-	20	Ix(inverter@2:VDD)	subckt_current
-	21	Ix(inverter@3:GND)	subckt_current
-	22	Ix(inverter@3:INP)	subckt_current
-	23	Ix(inverter@3:OUT)	subckt_current
-	24	Ix(inverter@3:VDD)	subckt_current
-	25	Ix(inverter@4:GND)	subckt_current
-	26	Ix(inverter@4:INP)	subckt_current
-	27	Ix(inverter@4:OUT)	subckt_current
-	28	Ix(inverter@4:VDD)	subckt_current
-	29	Ix(inverter@11:GND)	subckt_current
-	30	Ix(inverter@11:INP)	subckt_current
-	31	Ix(inverter@11:OUT)	subckt_current
-	32	Ix(inverter@11:VDD)	subckt_current
-	33	Ix(inverter@12:GND)	subckt_current
-	34	Ix(inverter@12:INP)	subckt_current
-	35	Ix(inverter@12:OUT)	subckt_current
-	36	Ix(inverter@12:VDD)	subckt_current
-Binary:
-k´GZg™é?:kk8ÍÌL?ô‘k8;ËL?ô‘k8ÍÌL?;ËL?…+7³[±X‹¬dù­üt16-²­ù-U‹,~,2•[±U‹¬ù­u16-²­ù-V‹,~,2à-²cù-X‹,%u,2—[±V‹¬°éÉ­äE1Ô]¸õéÉ-Ô]8Ã½
