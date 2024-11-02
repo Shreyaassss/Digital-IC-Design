@@ -1,0 +1,28 @@
+*** SPICE deck for cell 4xInverter{sch} from library Demo
+*** Created on Thu Sep 12, 2024 12:13:13
+*** Last revised on Thu Sep 12, 2024 17:47:44
+*** Written on Thu Sep 12, 2024 17:47:54 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.01FF
+
+*** TOP LEVEL CELL: 4xInverter{sch}
+Mnmos@1 OUT INP gnd gnd nmos L=0.022U W=0.088U
+Mnmos@2 OUT INP gnd gnd nmos L=0.022U W=0.088U
+Mpmos@1 vdd INP OUT vdd pmos L=0.022U W=0.088U
+Mpmos@2 vdd INP OUT vdd pmos L=0.022U W=0.088U
+Mpmos@3 vdd INP OUT vdd pmos L=0.022U W=0.088U
+Mpmos@4 vdd INP OUT vdd pmos L=0.022U W=0.088U
+
+* Spice Code nodes in cell cell '4xInverter{sch}'
+.include "D:\DIC\22nm_HP.pm"
+v1 vdd gnd DC 0.8
+v2 INP gnd pwl(0 0 100p 0.8  1n 0.8  1.1n 0)
+.meas tran TPLH
++trig v(inp) val=0.4 cross=2
++targ v(out) val=0.4 cross=2
+.meas tran TPHL
++trig v(inp) val=0.4 cross=1
++targ v(out) val=0.4 cross=1
+.tran 2.1n
+.END
+.END

@@ -1,0 +1,16 @@
+Expt - 1: (inverter layout)
+Measure Tplh, Tphl:
+
+.include "D:\DIC\22nm_HP.pm"
+v1 vdd gnd DC 0.8
+v2 INP gnd pwl(0 0 100p 0.8  1n 0.8  1.1n 0)
+.meas tran TPLH
++trig v(inp) val=0.4 cross=2
++targ v(out) val=0.4 cross=2
+.meas tran TPHL
++trig v(inp) val=0.4 cross=1
++targ v(out) val=0.4 cross=1
+.tran 2.1n
+.END
+
+--------------------------------------------------

@@ -1,0 +1,57 @@
+# header information:
+HMOSCHAR|9.07
+
+# Views:
+Vicon|ic
+Vschematic|sch
+
+# Technologies:
+Tmocmos|MininumCapacitanceINmocmos()D0.01|ScaleFORmocmos()D11.0
+
+# Cell inv;1{ic}
+Cinv;1{ic}||artwork|1725517783597|1725517799609|E
+Ngeneric:Facet-Center|art@0||0|0||||AV
+X
+
+# Cell inv;1{sch}
+Cinv;1{sch}||schematic|1725517770381|1725517783598|
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NOff-Page|conn@0||-31.5|3||||
+NOff-Page|conn@1||-1.5|3||||
+NGround|gnd@0||-11.5|-7||||
+Iinv;1{ic}|inv@0||3.5|18.5|||D5G4;
+NTransistor|nmos@0||-13.5|0|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)S4|SIM_spice_model(D5G1;X-1;Y-3;)Snmos
+NWire_Pin|pin@0||-22.5|7||||
+NWire_Pin|pin@1||-22.5|0||||
+NWire_Pin|pin@2||-22.5|3||||
+NWire_Pin|pin@3||-11.5|3||||
+NTransistor|pmos@0||-13.5|7|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)S8|SIM_spice_model(D5G1;X-1;Y-3;)Spmos
+NPower|pwr@0||-11.5|12||||
+Awire|net@0|||900|nmos@0|s|-11.5|-2|gnd@0||-11.5|-5
+Awire|net@1|||2700|nmos@0|d|-11.5|2|pin@3||-11.5|3
+Awire|net@2|||2700|pin@3||-11.5|3|pmos@0|s|-11.5|5
+Awire|net@3|||1800|pin@3||-11.5|3|conn@1|a|-3.5|3
+Awire|net@4|||2700|pmos@0|d|-11.5|9|pwr@0||-11.5|12
+Awire|net@5|||0|pmos@0|g|-14.5|7|pin@0||-22.5|7
+Awire|net@6|||1800|pin@1||-22.5|0|nmos@0|g|-14.5|0
+Awire|net@7|||900|pin@0||-22.5|7|pin@2||-22.5|3
+Awire|net@8|||900|pin@2||-22.5|3|pin@1||-22.5|0
+Awire|net@9|||1800|conn@0|y|-29.5|3|pin@2||-22.5|3
+X
+
+# Cell nmos+sch;1{sch}
+Cnmos+sch;1{sch}||schematic|1723117530287|1723294180796|
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NOff-Page|conn@1||-19|1||||
+NOff-Page|conn@2||-10|13|||RRR|
+NGround|gnd@0||-10|-5||||
+NTransistor|nmos@0||-12|1|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S4|ATTR_width(D5G1;X0.5;Y-1;)S2|SIM_spice_model(D5G1;Y-4;)Snmos
+Ngeneric:Invisible-Pin|pin@0||-34|3|||||SIM_spice_card(D5G1;)S[".include \"D:\\DIC\\22nm_HP.pm\"",.step param x 0.4 0.8 0.1,v1 Vg gnd DC {x},v2 Vdd gnd DC 0.8,.dc v2 0 0.8 0.01]
+NResistor|res@0||-10|7|||R||SCHEM_resistance(D5G1;)S1000
+Awire|net@0|||900|nmos@0|s|-10|-1|gnd@0||-10|-3
+Awire|net@1|||900|res@0|a|-10|5|nmos@0|d|-10|3
+Awire|net@3|||1800|conn@1|y|-17|1|nmos@0|g|-13|1
+Awire|net@4|||900|conn@2|y|-10|11|res@0|b|-10|9
+EVdd||D5G2;|conn@2|a|I
+EVg||D5G2;|conn@1|a|I
+X

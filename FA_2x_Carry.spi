@@ -1,0 +1,47 @@
+*** SPICE deck for cell FA_2x_Carry{sch} from library Demo
+*** Created on Wed Oct 23, 2024 22:59:06
+*** Last revised on Thu Oct 24, 2024 17:39:19
+*** Written on Thu Oct 24, 2024 17:39:26 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** TOP LEVEL CELL: FA_2x_Carry{sch}
+Mnmos@1 _C_out C_in net@27 gnd nmos L=0.4U W=1.6U
+Mnmos@2 _C_out C_in net@27 gnd nmos L=0.4U W=1.6U
+Mnmos@4 net@27 A gnd gnd nmos L=0.4U W=1.6U
+Mnmos@5 net@27 A gnd gnd nmos L=0.4U W=1.6U
+Mnmos@7 net@27 B gnd gnd nmos L=0.4U W=1.6U
+Mnmos@8 net@27 B gnd gnd nmos L=0.4U W=1.6U
+Mnmos@9 _C_out A net@8 gnd nmos L=0.4U W=1.6U
+Mnmos@10 net@8 B gnd gnd nmos L=0.4U W=1.6U
+Mpmos@1 net@0 C_in _C_out vdd pmos L=0.4U W=3.2U
+Mpmos@2 net@0 C_in _C_out vdd pmos L=0.4U W=3.2U
+Mpmos@4 vdd A net@0 vdd pmos L=0.4U W=3.2U
+Mpmos@5 vdd A net@0 vdd pmos L=0.4U W=3.2U
+Mpmos@7 vdd B net@0 vdd pmos L=0.4U W=3.2U
+Mpmos@8 vdd B net@0 vdd pmos L=0.4U W=3.2U
+Mpmos@9 net@7 A _C_out vdd pmos L=0.4U W=3.2U
+Mpmos@10 vdd B net@7 vdd pmos L=0.4U W=3.2U
+
+* Spice Code nodes in cell cell 'FA_2x_Carry{sch}'
+.include "D:\DIC\22nm_HP.pm"	
+.include "D:\DIC\22nm_HP.pm"
+.params vdd = 0.8
+v1 vdd gnd DC {vdd}
+v2 C_in gnd PWL(0 {vdd} 400p {vdd} 500p 0 0.9n 0 1n {vdd} 2.5n {vdd} )
+v3 B gnd PWL(0 0 2.5n 0 )
+v4 A gnd PWL(0 {vdd} 1.4n {vdd} 1.5n 0 1.9n 0 2n {vdd} 2.5n {vdd})
+.meas tran tCoff
++trig v(C_in1) val={vdd/2} cross=1
++targ v(_S) val={vdd/2} cross=1
+.meas tran tCon
++trig v(C_in1) val={vdd/2} cross=2
++targ v(_S) val={vdd/2} cross=2
+.meas tran tAoff
++trig v(A1) val={vdd/2} cross=1
++targ v(_S) val={vdd/2} cross=3
+.meas tran tAon
++trig v(A1) val={vdd/2} cross=2
++targ v(_S) val={vdd/2} cross=4
+.trans 0 2.5n	
+.END

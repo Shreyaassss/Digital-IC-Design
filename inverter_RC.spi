@@ -1,0 +1,53 @@
+*** SPICE deck for cell Demo__inverter{lay} from library Demo
+*** Created on Sun Aug 18, 2024 14:07:38
+*** Last revised on Mon Oct 14, 2024 21:43:10
+*** Written on Mon Oct 14, 2024 21:43:23 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.01FF
+***    P-Active:	areacap=0.9FF/um^2,	edgecap=0.0FF/um,	res=2.5ohms/sq
+***    N-Active:	areacap=0.9FF/um^2,	edgecap=0.0FF/um,	res=3.0ohms/sq
+***    Polysilicon-1:	areacap=0.1467FF/um^2,	edgecap=0.0608FF/um,	res=6.2ohms/sq
+***    Polysilicon-2:	areacap=1.0FF/um^2,	edgecap=0.0FF/um,	res=50.0ohms/sq
+***    Transistor-Poly:	areacap=0.09FF/um^2,	edgecap=0.0FF/um,	res=2.5ohms/sq
+***    Poly-Cut:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=2.2ohms/sq
+***    Active-Cut:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=2.5ohms/sq
+***    Metal-1:	areacap=0.1209FF/um^2,	edgecap=0.1104FF/um,	res=0.078ohms/sq
+***    Via1:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=1.0ohms/sq
+***    Metal-2:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.078ohms/sq
+***    Via2:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=0.9ohms/sq
+***    Metal-3:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.078ohms/sq
+***    Via3:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=0.8ohms/sq
+***    Metal-4:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.078ohms/sq
+***    Via4:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=0.8ohms/sq
+***    Metal-5:	areacap=0.0843FF/um^2,	edgecap=0.0974FF/um,	res=0.078ohms/sq
+***    Via5:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=0.8ohms/sq
+***    Metal-6:	areacap=0.0423FF/um^2,	edgecap=0.1273FF/um,	res=0.036ohms/sq
+***    Hi-Res:	areacap=0.0FF/um^2,	edgecap=0.0FF/um,	res=1.0ohms/sq
+
+*** SUBCIRCUIT Demo__inverter FROM CELL Demo__inverter{lay}
+.SUBCKT Demo__inverter gnd INP OUT vdd
+Mnmos@3 gnd INP#2nmos@3_poly-right OUT gnd nmos L=0.022U W=0.044U AS=0.005P AD=0.004P PS=0.275U PD=0.242U
+Mpmos@2 vdd INP#0pmos@2_poly-left OUT vdd pmos L=0.022U W=0.088U AS=0.005P AD=0.006P PS=0.275U PD=0.308U
+** Extracted Parasitic Capacitors ***
+C0 OUT 0 0.112fF
+C1 INP 0 0.023fF
+** Extracted Parasitic Resistors ***
+R0 INP#0pmos@2_poly-left INP#0pmos@2_poly-left##0 8.99
+R1 INP#0pmos@2_poly-left##0 INP#0pmos@2_poly-left##1 8.99
+R2 INP#0pmos@2_poly-left##1 INP#0pmos@2_poly-left##2 8.99
+R3 INP#0pmos@2_poly-left##2 INP#0pmos@2_poly-left##3 8.99
+R4 INP#0pmos@2_poly-left##3 INP#1pin@25_polysilicon-1 8.99
+R5 INP#1pin@25_polysilicon-1 INP#1pin@25_polysilicon-1##0 8.99
+R6 INP#1pin@25_polysilicon-1##0 INP#1pin@25_polysilicon-1##1 8.99
+R7 INP#1pin@25_polysilicon-1##1 INP#1pin@25_polysilicon-1##2 8.99
+R8 INP#1pin@25_polysilicon-1##2 INP#1pin@25_polysilicon-1##3 8.99
+R9 INP#1pin@25_polysilicon-1##3 INP#2nmos@3_poly-right 8.99
+R10 INP#1pin@25_polysilicon-1 INP 9.3
+
+* Spice Code nodes in cell cell 'Demo__inverter{lay}'
+.include "D:\DIC\22nm_HP.pm"
+.ENDS Demo__inverter
+
+
+*XDemo__inverter gnd INP OUT vdd Demo__inverter
+

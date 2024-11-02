@@ -1,0 +1,35 @@
+*** SPICE deck for cell Test__AND2_2x{sch} from library Demo
+*** Created on Mon Oct 14, 2024 20:10:29
+*** Last revised on Thu Oct 17, 2024 17:06:07
+*** Written on Thu Oct 17, 2024 17:07:20 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.01FF
+
+* cell 'AND2_2x{sch}' is described in this file:
+.include D:\DIC\AND2_2x_RC.spi
+
+* cell 'inverter{sch}' is described in this file:
+.include D:\DIC\inverter_RC.spi
+
+*** TOP LEVEL CELL: Test__AND2_2x{sch}
+XAND2_2x@0 A_in B_in gnd Y vdd Demo__AND2_2x
+XAND2_2x@1 AND2_2x@1_A Y gnd AND2_2x@1_OUT vdd Demo__AND2_2x
+Xinverter@0 gnd A net@4 vdd Demo__inverter
+Xinverter@1 gnd net@4 A_in vdd Demo__inverter
+Xinverter@2 gnd B net@2 vdd Demo__inverter
+Xinverter@3 gnd net@2 B_in vdd Demo__inverter
+
+* Spice Code nodes in cell cell 'Test__AND2_2x{sch}'
+.include "D:\DIC\22nm_HP.pm"
+.params vdd = 0.8
+v1 vdd gnd DC {vdd}
+v2 A gnd PWL(0 0 400p 0 500p {vdd} 900p {vdd} 1n 0 1.4n 0 1.5n {vdd} 1.9n {vdd} 2n 0)
+v3 B gnd PWL(0 0 900p 0 1n {vdd} 1.9n {vdd} )
+.meas tran tPHL
++trig v(a_in) val={vdd/2} cross=3
++targ v(y) val={vdd/2} cross=1
+.meas tran tPLH
++trig v(a_in) val={vdd/2} cross=4
++targ v(y) val={vdd/2} cross=2
+.trans 0 2.4n	
+.END

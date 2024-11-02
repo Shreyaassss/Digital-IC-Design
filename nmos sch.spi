@@ -1,0 +1,19 @@
+*** SPICE deck for cell nmos+sch{sch} from library MOSCHAR
+*** Created on Thu Aug 08, 2024 17:15:30
+*** Last revised on Thu Aug 08, 2024 17:28:28
+*** Written on Thu Aug 08, 2024 17:37:25 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd
+
+*** TOP LEVEL CELL: nmos+sch{sch}
+Mnmos@0 net@1 Vg gnd gnd nmos L=0.044U W=0.022U
+Rres@0 Vdd net@1 1k
+
+* Spice Code nodes in cell cell 'nmos+sch{sch}'
+.include "D:\DIC\22nm_HP.pm"
+v1 Vg gnd DC 0.8
+v2 Vdd gnd DC 0.8
+.dc v2 0 0.8 0.01
+.END

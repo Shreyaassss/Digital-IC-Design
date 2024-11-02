@@ -1,0 +1,33 @@
+*** SPICE deck for cell tutorial_6b{sch} from library tutorial_6b
+*** Created on Thu Oct 17, 2024 10:13:27
+*** Last revised on Thu Oct 24, 2024 17:48:09
+*** Written on Thu Oct 24, 2024 17:48:22 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** TOP LEVEL CELL: tutorial_6b{sch}
+Mnmos@0 Cout_bar Cin net@27 gnd nmos L=0.022U W=0.088U
+Mnmos@1 Cout_bar B net@32 gnd nmos L=0.022U W=0.088U
+Mnmos@2 net@27 A gnd gnd nmos L=0.022U W=0.088U
+Mnmos@3 net@27 B gnd gnd nmos L=0.022U W=0.088U
+Mnmos@4 net@32 A gnd gnd nmos L=0.022U W=0.088U
+Mpmos@0 vdd A net@6 vdd pmos L=0.022U W=0.176U
+Mpmos@1 vdd B net@6 vdd pmos L=0.022U W=0.176U
+Mpmos@2 vdd A net@38 vdd pmos L=0.022U W=0.176U
+Mpmos@3 net@6 Cin Cout_bar vdd pmos L=0.022U W=0.176U
+Mpmos@4 net@38 B Cout_bar vdd pmos L=0.022U W=0.176U
+
+* Spice Code nodes in cell cell 'tutorial_6b{sch}'
+.include "D:\DIC\22nm_HP.pm"	
+.param vdd 0.8
+v1 vdd gnd DC {vdd}
+VinA A 0 PWL(0n 0 0.4n 0 0.5n {vdd} 0.9n {vdd} 1n 0 1.4n 0 1.5n {vdd} 1.9n {vdd} 2n 0 2.4n 0 2.5n {vdd} 2.9n {vdd} 3n 0 3.4n 0 3.5n {vdd} 3.9n {vdd} 4n 0)
+VinB B 0 PWL(0n 0 0.9n 0 1n {vdd} 1.9n {vdd} 2n 0 2.9n 0 3n {vdd} 3.9n {vdd} 4n 0)
+VinCin Cin 0 PWL(0n 0 1.9n 0 2n {vdd} 3.9n {vdd} 4n 0)
+.measure tran tdelay_cin TRIG V(Cin) VAL=0.4 TD=0n RISE=1 TARG V(Cout_bar) VAL=0.4 TD=0n RISE=1
+.measure tran tdelay_cin_f TRIG V(Cin) VAL=0.4 TD=20n FALL=1 TARG V(Cout_bar) VAL=0.4 TD=20n FALL=1
+.measure tran tdelay_a TRIG V(A) VAL=0.4 TD=0 RISE=1 TARG V(Cout_bar) VAL=0.4 TD=0 RISE=1
+.measure tran tdelay_a_f TRIG V(A) VAL=0.4 TD=20n FALL=1 TARG V(Cout_bar) VAL=0.4 TD=20n FALL=1
+.tran 0.1n 4n
+.end
+.END

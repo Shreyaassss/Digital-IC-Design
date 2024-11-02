@@ -1,0 +1,21 @@
+*** SPICE deck for cell Test__inverter{sch} from library Demo
+*** Created on Wed Aug 21, 2024 18:54:57
+*** Last revised on Mon Oct 14, 2024 21:42:57
+*** Written on Mon Oct 14, 2024 21:46:14 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.01FF
+
+* cell 'inverter{sch}' is described in this file:
+.include D:\DIC\inverter_RC.spi
+
+*** TOP LEVEL CELL: Test__inverter{sch}
+Xinverter@1 gnd INP OUT vdd Demo__inverter
+
+* Spice Code nodes in cell cell 'Test__inverter{sch}'
+.include "D:\DIC\22nm_HP.pm"
+v1 vdd gnd DC 0.8
+v2 INP gnd pwl(0 0 100p 0.8 1n 0.8 1.1n 0 2n 0)
+.meas tran TPLH
+.tran 2.1n
+.END
+.END

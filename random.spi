@@ -1,0 +1,39 @@
+*** SPICE deck for cell random{sch} from library Demo
+*** Created on Thu Oct 24, 2024 17:09:40
+*** Last revised on Thu Oct 24, 2024 17:10:52
+*** Written on Thu Oct 24, 2024 17:10:58 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+* cell 'inverter{sch}' is described in this file:
+.include D:\DIC\inverter_RC.spi
+
+*** TOP LEVEL CELL: random{sch}
+Xinverter@0 gnd net@3 A1 vdd Demo__inverter
+Xinverter@1 gnd A net@3 vdd Demo__inverter
+Xinverter@2 gnd net@7 B1 vdd Demo__inverter
+Xinverter@3 gnd B net@7 vdd Demo__inverter
+Xinverter@4 gnd net@11 C_in1 vdd Demo__inverter
+Xinverter@5 gnd C_in net@11 vdd Demo__inverter
+
+* Spice Code nodes in cell cell 'random{sch}'
+.include "D:\DIC\22nm_HP.pm"
+.params vdd = 0.8
+v1 vdd gnd DC {vdd}
+v2 C_in gnd PWL(0 {vdd} 400p {vdd} 500p 0 0.9n 0 1n {vdd} 2.5n {vdd} )
+v3 B gnd PWL(0 0 2.5n 0 )
+v4 A gnd PWL(0 {vdd} 1.4n {vdd} 1.5n 0 1.9n 0 2n {vdd} 2.5n {vdd})
+.meas tran tCoff
++trig v(C_in1) val={vdd/2} cross=1
++targ v(_S) val={vdd/2} cross=1
+.meas tran tCon
++trig v(C_in1) val={vdd/2} cross=2
++targ v(_S) val={vdd/2} cross=2
+.meas tran tAoff
++trig v(A1) val={vdd/2} cross=1
++targ v(_S) val={vdd/2} cross=3
+.meas tran tAon
++trig v(A1) val={vdd/2} cross=2
++targ v(_S) val={vdd/2} cross=4
+.trans 0 2.5n	
+.END

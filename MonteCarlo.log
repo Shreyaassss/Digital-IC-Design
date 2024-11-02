@@ -1,0 +1,207 @@
+LTspice 24.0.12 for Windows
+Circuit: *** SPICE deck for cell MonteCarlo{sch} from library Demo
+Start Time: Thu Sep  5 16:06:13 2024
+solver = Normal
+Maximum thread count: 8
+
+
+
+.step mc_run=1
+
+
+
+.step mc_run=2
+
+
+
+.step mc_run=3
+
+
+
+.step mc_run=4
+
+
+
+.step mc_run=5
+
+
+
+.step mc_run=6
+
+
+
+.step mc_run=7
+
+
+
+.step mc_run=8
+
+
+
+.step mc_run=9
+
+
+
+.step mc_run=10
+
+
+
+.step mc_run=11
+
+
+
+.step mc_run=12
+
+
+
+.step mc_run=13
+
+
+
+.step mc_run=14
+
+
+
+.step mc_run=15
+
+
+
+.step mc_run=16
+
+
+
+.step mc_run=17
+
+
+
+.step mc_run=18
+
+
+
+.step mc_run=19
+
+
+
+.step mc_run=20
+
+
+
+.step mc_run=21
+
+
+
+.step mc_run=22
+
+
+
+.step mc_run=23
+
+
+
+.step mc_run=24
+
+
+
+.step mc_run=25
+
+
+
+.step mc_run=26
+
+
+
+.step mc_run=27
+
+
+
+.step mc_run=28
+
+
+
+.step mc_run=29
+
+
+
+.step mc_run=30
+
+
+
+.step mc_run=31
+
+
+
+.step mc_run=32
+
+
+
+.step mc_run=33
+
+
+
+.step mc_run=34
+
+
+
+.step mc_run=35
+
+
+
+.step mc_run=36
+
+
+
+.step mc_run=37
+
+
+
+.step mc_run=38
+
+
+
+.step mc_run=39
+
+
+
+.step mc_run=40
+
+
+
+.step mc_run=41
+
+
+
+.step mc_run=42
+
+
+
+.step mc_run=43
+
+
+
+.step mc_run=44
+
+
+
+.step mc_run=45
+
+
+
+.step mc_run=46
+
+
+
+.step mc_run=47
+
+
+
+.step mc_run=48
+
+
+
+.step mc_run=49
+tnom = 27
+temp = 27
+method = modified trap
+.step mc_run=50
+Total elapsed time: 1.033 seconds.
+

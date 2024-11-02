@@ -1,0 +1,17 @@
+LTspice 24.0.12 for Windows
+Circuit: *** SPICE deck for cell Demo__FiveStageRingOsc{lay} from library Demo
+Start Time: Thu Sep  5 16:26:31 2024
+solver = Normal
+Maximum thread count: 8
+tnom = 27
+temp = 27
+method = modified trap
+Warning: toxe, toxp and dtox all given and toxe != toxp + dtox; dtox ignored.
+Direct Newton iteration for .op point succeeded.
+
+t1: time=3.21959e-10 at 3.21959e-10
+t2: time=4.1229e-10 at 4.1229e-10
+f: 1/(t2-t1)=1.10704e+10
+
+Total elapsed time: 0.138 seconds.
+

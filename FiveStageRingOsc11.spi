@@ -1,0 +1,38 @@
+*** SPICE deck for cell FiveStageRingOsc{sch} from library Demo
+*** Created on Wed Sep 04, 2024 23:35:51
+*** Last revised on Thu Sep 05, 2024 12:30:35
+*** Written on Thu Sep 05, 2024 12:38:01 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.01FF
+
+*** SUBCIRCUIT Demo__inverter FROM CELL inverter{sch}
+.SUBCKT Demo__inverter gnd INP OUT vdd
+Mnmos@0 OUT INP gnd gnd nmos L=0.022U W=0.044U
+Mpmos@0 vdd INP OUT vdd pmos L=0.022U W=0.088U
+
+* Spice Code nodes in cell cell 'inverter{sch}'
+.include "D:\DIC\22nm_HP.pm"
+.ENDS Demo__inverter
+
+*** TOP LEVEL CELL: FiveStageRingOsc{sch}
+Xinverter@1 gnd net@1 net@2 vdd Demo__inverter
+Xinverter@2 gnd net@2 net@3 vdd Demo__inverter
+Xinverter@3 gnd net@3 net@4 vdd Demo__inverter
+Xinverter@4 gnd net@4 net@6 vdd Demo__inverter
+Xinverter@5 gnd in1 net@1 vdd Demo__inverter
+Xinverter@6 gnd net@18 net@25 vdd Demo__inverter
+Xinverter@7 gnd net@25 net@26 vdd Demo__inverter
+Xinverter@8 gnd net@26 net@27 vdd Demo__inverter
+Xinverter@9 gnd net@27 net@29 vdd Demo__inverter
+Xinverter@10 gnd net@6 net@18 vdd Demo__inverter
+Xinverter@11 gnd net@29 in1 vdd Demo__inverter
+
+* Spice Code nodes in cell cell 'FiveStageRingOsc{sch}'
+.include "D:\DIC\22nm_HP.pm"
+v1 vdd gnd DC 0.8
+.ic v(in1)=0.8
+.tran 10n
+.meas t1 find time when v(in1)=0.4 cross=12
+.meas t2 find time when v(in1)=0.4 cross=14
+.meas f param 1/(t2-t1)
+.END

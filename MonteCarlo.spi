@@ -1,0 +1,27 @@
+*** SPICE deck for cell MonteCarlo{sch} from library Demo
+*** Created on Wed Sep 04, 2024 21:45:31
+*** Last revised on Wed Sep 04, 2024 22:02:50
+*** Written on Wed Sep 04, 2024 22:03:02 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.01FF
+.param Wu = 11e-9
+.param Lu = 11e-9
+.func gc(mean, sigma) {mean*(gauss(sigma))}
+.param vto = 0.50308
+.global gnd
+
+*** TOP LEVEL CELL: MonteCarlo{sch}
+Mnmos@0 net@1 Vg gnd gnd nmos L={L} W={W} delvto={gc({vto},{sig1})}
+Rres@1 Vdd net@1 1k
+
+* Spice Code nodes in cell cell 'MonteCarlo{sch}'
+.include "D:\DIC\22nm_HP.pm"
+.param L = 2*Lu
+.param W = 2*Wu
+.param sigMos = 0.1
+.param sig1 = {sigMos*sqrt((Wu*Lu)/(W*L))}
+v1 Vg gnd DC 0.8
+v2 Vdd gnd DC 0.8
+.dc v2 0 0.8 0.01
+.step param MC_RUN 1 50 1
+.END
